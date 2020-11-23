@@ -22,5 +22,11 @@ module.exports.cadastrar = function(application, req, res){
 		return;
 	}
 
+
+	var connection = application.config.dbConnection;
+	var UsuarioDAO = new application.app.models.UsuarioDAO(connection);
+
+	UsuarioDAO.inserirUsuario(dadosForm);
+
 	res.send("formulario enviado");
 }
