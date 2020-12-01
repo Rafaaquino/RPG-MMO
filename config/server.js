@@ -39,7 +39,7 @@ app.use(expressValidator());
 /* configurar o middleware express-session */
 app.use(expressSession({
 	
-	secret: '',
+	secret: 'asdojasdj',
 	resave: false,
 	saveUninitialized: false	
 }));
