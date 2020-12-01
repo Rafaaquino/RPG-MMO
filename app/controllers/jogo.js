@@ -4,7 +4,17 @@ module.exports.jogo = function(application, req, res){
 		res.render('jogo');
 	}	
 	else{
-		res.send("precisa autenticar no kogo");
+		res.send("precisa autenticar no Jogo");
 	}
+	
+}
+
+
+module.exports.sair = function(application, req, res){
+	
+	req.session.destroy( function(err){
+
+		res.render("index", {validacao: {}});
+	});
 	
 }
