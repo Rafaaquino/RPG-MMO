@@ -3,12 +3,12 @@ module.exports = function(application){
 		application.app.controllers.jogo.jogo(application, req, res);
 	});
 
-	application.get('/sudito', function(req, res){
-		application.app.controllers.jogo.sudito(application, req, res);
+	application.get('/aldeoes', function(req, res){
+		application.app.controllers.jogo.suditos(application, req, res);
 	});
 
-	application.get('/pergaminho', function(req, res){
-		application.app.controllers.jogo.pergaminho(application, req, res);
+	application.get('/pergaminhos', function(req, res){
+		application.app.controllers.jogo.pergaminhos(application, req, res);
 	});
 
 	application.get('/sair', function(req, res){
