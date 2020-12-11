@@ -22,6 +22,8 @@
 				});
 
 				$('#btn_suditos').click( function(){
+
+					$('#msg_erro').hide();
 					$.ajax({
 						url: '/aldeoes',
 						method: "get",
@@ -58,6 +60,12 @@
 		</nav>
 
 	    <div class="container">
+
+	   		<% if(comando_invalido == 'S') { %>
+	    		<div class="alert alert-danger" id="msg_erro">
+	    			<strong>Alguma informação está inválida! verifique todos os campos</strong>
+	    		</div>
+	    	<% } %>
 	    	
 			<div class="row">
 	    		<div class="col-sm-3 casa">
@@ -92,7 +100,7 @@
 			<div class="row">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-9">
-					<div class="acoes" id="acoes"> o que deseja senhor?</div>					
+					<div class="acoes" id="acoes"> O que deseja senhor?</div>					
 				</div>
 			</div>
 			
@@ -104,6 +112,7 @@
 				<div class="row">
 					<div class="col-sm-1">
 						<img src="images/outros/suditos.jpg" id="btn_suditos" title="Aldeões" alt="Aldeões"/>
+						<span><%=jogo.suditos%></span>
 					</div>
 					
 					<div class="col-sm-1">
