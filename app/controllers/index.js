@@ -2,20 +2,17 @@ module.exports.index = function(application, req, res){
 	res.render('index', {validacao: {}});
 }
 
-
 module.exports.autenticar = function(application, req, res){
 	
 	var dadosForm = req.body;
 
-	req.assert('usuario', 'Usúario é obrigatorio').notEmpty();
-	req.assert('senha', 'Senha é obrigatorio').notEmpty();
+	req.assert('usuario', 'Usuário não de ser vazio').notEmpty();
+	req.assert('senha', 'Senha não de ser vazia').notEmpty();
 
 	var erros = req.validationErrors();
 
-
 	if(erros){
-
-		res.render('index', {validacao: erros});
+		res.render("index", {validacao:erros});
 		return;
 	}
 
@@ -24,5 +21,5 @@ module.exports.autenticar = function(application, req, res){
 
 	UsuariosDAO.autenticar(dadosForm, req, res);
 
-	//res.send('tudo ok para autenticar');
+	//res.send('tudo ok para criar a sessão');
 }
